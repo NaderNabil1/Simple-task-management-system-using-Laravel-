@@ -24,10 +24,18 @@
     <div class="ag-courses_item">
       <a href="{{ route('show-task', $task->slug) }}" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-
         <div class="ag-courses-item_title">
           {{$task->title}}
         </div>
+        @if($task->status =='Completed')
+        <div class="ag-courses-item_title status-succes">
+          {{$task->status}}
+        </div>
+        @else
+        <div class="ag-courses-item_title status">
+          {{$task->status}}
+        </div>
+        @endif
         @if($task->start_date!='')
         <div class="ag-courses-item_date-box">
           Start:

@@ -23,11 +23,21 @@
     <div class="ag-courses_item">
       <a href="<?php echo e(route('show-task', $task->slug)); ?>" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-
         <div class="ag-courses-item_title">
           <?php echo e($task->title); ?>
 
         </div>
+        <?php if($task->status =='Completed'): ?>
+        <div class="ag-courses-item_title status-succes">
+          <?php echo e($task->status); ?>
+
+        </div>
+        <?php else: ?>
+        <div class="ag-courses-item_title status">
+          <?php echo e($task->status); ?>
+
+        </div>
+        <?php endif; ?>
         <?php if($task->start_date!=''): ?>
         <div class="ag-courses-item_date-box">
           Start:

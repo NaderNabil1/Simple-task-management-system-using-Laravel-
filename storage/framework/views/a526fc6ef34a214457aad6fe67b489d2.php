@@ -47,8 +47,19 @@
                     </div>
                     <form class="addtocart col-md-12" method="post" >
                         <?php echo csrf_field(); ?>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-control" name="status">
+                                        <option <?php echo e($task->status == "In Progress" ? 'selected' : ''); ?> value="In Progress">In Progress</option>
+                                        <option <?php echo e($task->status == "Completed" ? 'selected' : ''); ?> value="Completed">Completed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 col-lg">
-                            <button type="submit" class="btn btn-block custom-height bg-dark mb-2"><i class="lni lni-shopping-basket mr-2"></i> Update</button>
+                            <button type="submit" class="btn btn-block custom-height bg-dark mb-2 width-modfied">Update</button>
                         </div>
                     </form>
                 </div>

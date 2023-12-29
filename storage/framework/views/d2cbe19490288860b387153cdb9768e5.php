@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php echo $__env->yieldContent('title'); ?> | Soft Xpert</title>
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-        <link rel="icon" type="image/png" href="<?php echo e(asset('FrontEnd/img/favicon.png')); ?>">
         <link href="<?php echo e(asset('FrontEnd/css/styles.css')); ?>?v=0.0001" rel="stylesheet">
         <?php echo $__env->yieldContent('stylesheets'); ?>
     </head>
@@ -19,7 +18,7 @@
                     <nav id="navigation" class="navigation navigation-landscape">
                         <div class="nav-header">
                             <a class="nav-brand" href="<?php echo e(route('home')); ?>">
-                                <img src="<?php echo e(asset('FrontEnd/img/logo.png')); ?>" class="logo" alt="La Plain" />
+                                <img src="<?php echo e(asset('FrontEnd/img/logo2.png')); ?>" class="logo edited" alt="SoftXpert" />
                             </a>
                             <div class="nav-toggle"></div>
                         </div>

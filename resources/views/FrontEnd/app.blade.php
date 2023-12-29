@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title') | Soft Xpert</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" type="image/png" href="{{ asset('FrontEnd/img/favicon.png') }}">
         <link href="{{ asset('FrontEnd/css/styles.css') }}?v=0.0001" rel="stylesheet">
         @yield('stylesheets')
     </head>
@@ -19,7 +18,7 @@
                     <nav id="navigation" class="navigation navigation-landscape">
                         <div class="nav-header">
                             <a class="nav-brand" href="{{ route('home')}}">
-                                <img src="{{ asset('FrontEnd/img/logo.png') }}" class="logo" alt="La Plain" />
+                                <img src="{{ asset('FrontEnd/img/logo2.png') }}" class="logo edited" alt="SoftXpert" />
                             </a>
                             <div class="nav-toggle"></div>
                         </div>
