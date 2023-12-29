@@ -10,8 +10,6 @@
             <h4 class="px-3 py-2 mb-0 lh-2 gray fs-sm ft-medium text-muted text-uppercase text-left">Dashboard Navigation</h4>
             <ul class="dahs_navbar" role="tablist">
                 <li><a class="nav-link @if(Route::current()->getName() == 'edit-account') active @endif" href="{{ Route('edit-account') }}"><i class="lni lni-user mr-2"></i> Edit Account details</a></li>
-                <li><a class="nav-link @if(Route::current()->getName() == 'orders' || Route::current()->getName() == 'show-order') active @endif" href="{{ Route('orders') }}"><i class="lni lni-shopping-basket mr-2"></i> Orders</a></li>
-                <li><a class="nav-link @if(Route::current()->getName() == 'addresses' || Route::current()->getName() == 'add-address' || Route::current()->getName() == 'edit-address') active @endif" href="{{ Route('addresses') }}"><i class="lni lni-map-marker mr-2"></i> Addresses</a></li>
                 <li><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="lni lni-power-switch mr-2"></i> logout</a></li>
             </ul>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>

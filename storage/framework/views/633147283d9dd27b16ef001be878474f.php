@@ -1,14 +1,13 @@
-@extends('FrontEnd.app')
-@section('title', 'Edit account')
+<?php $__env->startSection('title', 'Edit account'); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="gray py-3">
     <div class="container">
         <div class="row">
             <div class="colxl-12 col-lg-12 col-md-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Edit account</li>
                     </ol>
                 </nav>
@@ -20,37 +19,37 @@
     <div class="container">
         <div class="row align-items-start justify-content-between">
 
-            @include('FrontEnd.Account.sidebar')
+            <?php echo $__env->make('FrontEnd.Account.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <div class="col-12 col-md-12 col-lg-8 col-xl-8">
                 <!-- row -->
                 <div class="row align-items-center">
                     <form method="POST" class="row m-0">
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="small text-dark ft-medium">First Name *</label>
-                                <input type="text" class="form-control" name="first_name" value="{{ $user->first_name }}" required/>
+                                <input type="text" class="form-control" name="first_name" value="<?php echo e($user->first_name); ?>" required/>
                             </div>
                         </div>
 
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="small text-dark ft-medium">Last Name *</label>
-                                <input type="text" class="form-control" name="last_name" value="{{ $user->last_name }}" required/>
+                                <input type="text" class="form-control" name="last_name" value="<?php echo e($user->last_name); ?>" required/>
                             </div>
                         </div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="small text-dark ft-medium">Email *</label>
-                                <input type="email" name="email" class="form-control" value="{{ $user->email }}" required/>
+                                <input type="email" name="email" class="form-control" value="<?php echo e($user->email); ?>" required/>
                             </div>
                         </div>
                         
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="small text-dark ft-medium">Phone *</label>
-                                <input type="text" name="phone" class="form-control" value="{{ $user->phone }}" required/>
+                                <input type="text" name="phone" class="form-control" value="<?php echo e($user->phone); ?>" required/>
                             </div>
                         </div>
 
@@ -68,10 +67,10 @@
         </div>
     </div>
 </section>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('javascripts')
-<script src="{{ asset('FrontEnd/vendor/jquery-validate/jquery.validate.min.js') }}"></script>
+<?php $__env->startSection('javascripts'); ?>
+<script src="<?php echo e(asset('FrontEnd/vendor/jquery-validate/jquery.validate.min.js')); ?>"></script>
 
 <script>
 $(document).ready(function() {
@@ -128,4 +127,6 @@ $(document).ready(function() {
     });
 });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('FrontEnd.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Nader\SoftXpert\resources\views/FrontEnd/Account/editAccount.blade.php ENDPATH**/ ?>

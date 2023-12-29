@@ -1,21 +1,19 @@
-@extends('Dashboard.app')
+<?php $__env->startSection('title', 'Add user'); ?>
 
-@section('title', 'Add user')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="content-area p-y-1">
     <div class="container-fluid">
         <h4>Add user</h4>
         <ol class="breadcrumb no-bg m-b-1">
-            <li class="breadcrumb-item"><a href="{{ Route('dashboard') }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{ Route('users') }}">Users</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo e(Route('dashboard')); ?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo e(Route('users')); ?>">Users</a></li>
             <li class="breadcrumb-item active">Add user</li>
         </ol>
 
         <div class="box box-block bg-white">
             <form method="post" id="form">
-            @csrf
+            <?php echo csrf_field(); ?>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
                         <div class="form-group">
@@ -62,10 +60,10 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('javascripts')
-<script type="text/javascript" src="{{ asset('BackEnd/js/jquery.validate.js') }}"></script>
+<?php $__env->startSection('javascripts'); ?>
+<script type="text/javascript" src="<?php echo e(asset('BackEnd/js/jquery.validate.js')); ?>"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -89,4 +87,6 @@
         });
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Dashboard.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Nader\SoftXpert\resources\views/Dashboard/User/add.blade.php ENDPATH**/ ?>

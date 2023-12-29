@@ -1,18 +1,16 @@
-@extends('Dashboard.app')
+<?php $__env->startSection('title', 'Users'); ?>
 
-@section('title', 'Users')
+<?php $__env->startSection('stylesheets'); ?>
+<link rel="stylesheet" href="<?php echo e(asset('BackEnd/vendor/sweetalert2/sweetalert2.min.css')); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('stylesheets')
-<link rel="stylesheet" href="{{ asset('BackEnd/vendor/sweetalert2/sweetalert2.min.css') }}">
-@endsection
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="content-area p-y-1">
     <div class="container-fluid">
         <h4>All users</h4>
         <ol class="breadcrumb no-bg m-b-1">
-            <li class="breadcrumb-item"><a href="{{ Route('dashboard') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo e(Route('dashboard')); ?>">Home</a></li>
             <li class="breadcrumb-item active">All users</li>
         </ol>
     </div>
@@ -20,7 +18,7 @@
     <div class="container-fluid">
         <div class="box box-block bg-white">
             <div class="table-responsive">
-                <a href="{{ Route('add-user') }}" class="btn btn-primary w-min-sm m-b-0-25 waves-effect waves-light pull-right">Add user</a>
+                <a href="<?php echo e(Route('add-user')); ?>" class="btn btn-primary w-min-sm m-b-0-25 waves-effect waves-light pull-right">Add user</a>
                 <table class="table table-bordered table-striped">
                     <thead class="thead-inverse">
                         <tr>
@@ -33,25 +31,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if( $users->Count() > 0 )
-                        @foreach( $users as $user)
+                        <?php if( $users->Count() > 0 ): ?>
+                        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->first_name . ' ' . $user->last_name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone }}</td>
-                            <td>{{ $user->role }}</td>
+                            <td><?php echo e($user->id); ?></td>
+                            <td><?php echo e($user->first_name . ' ' . $user->last_name); ?></td>
+                            <td><?php echo e($user->email); ?></td>
+                            <td><?php echo e($user->phone); ?></td>
+                            <td><?php echo e($user->role); ?></td>
                             <td>
-                                <a href="{{ Route('edit-user', $user->id) }}" class="btn btn-success w-min-sm m-b-0-25 waves-effect waves-light">Edit</a>
-                                <button data-title="this user" data-route="{{ Route('delete-user', $user->id) }}" class="btn btn-danger w-min-sm m-b-0-25 waves-effect waves-light run-swal" data-type="cancel">Delete</button>
+                                <a href="<?php echo e(Route('edit-user', $user->id)); ?>" class="btn btn-success w-min-sm m-b-0-25 waves-effect waves-light">Edit</a>
+                                <button data-title="this user" data-route="<?php echo e(Route('delete-user', $user->id)); ?>" class="btn btn-danger w-min-sm m-b-0-25 waves-effect waves-light run-swal" data-type="cancel">Delete</button>
                             </td>
                         </tr>
-                        @endforeach
-                        @else
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php else: ?>
                         <tr>
                             <td colspan="9"><div class="alert alert-warning">No users available.</div></td>
                         </tr>
-                        @endif
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
@@ -60,10 +58,10 @@
 
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('javascripts')
-<script type="text/javascript" src="{{ asset('BackEnd/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+<?php $__env->startSection('javascripts'); ?>
+<script type="text/javascript" src="<?php echo e(asset('BackEnd/vendor/sweetalert2/sweetalert2.min.js')); ?>"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('.run-swal').on('click', function () {
@@ -92,4 +90,6 @@
         });
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Dashboard.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Nader\SoftXpert\resources\views/Dashboard/User/index.blade.php ENDPATH**/ ?>

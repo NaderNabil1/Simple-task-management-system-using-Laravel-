@@ -12,14 +12,4 @@ class PageController extends Controller
         $page = Page::find(1);
         return view('FrontEnd.Page.index', compact('page'));
     }
-
-    public function about(){
-        $page = Page::find(2);
-        return view('FrontEnd.Page.about', compact('page'));
-    }
-
-    public function contact(){
-        $page = Page::find(3);
-        return view('FrontEnd.Page.contact',compact('page'));
-    }
 }

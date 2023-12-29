@@ -1,6 +1,6 @@
 @extends('Dashboard.app')
 
-@section('title', 'Users')
+@section('title', 'Managers')
 
 @section('stylesheets')
 <link rel="stylesheet" href="{{ asset('BackEnd/vendor/sweetalert2/sweetalert2.min.css') }}">
@@ -10,17 +10,18 @@
 
 <div class="content-area p-y-1">
     <div class="container-fluid">
-        <h4>All users</h4>
+        <h4>Managers</h4>
         <ol class="breadcrumb no-bg m-b-1">
             <li class="breadcrumb-item"><a href="{{ Route('dashboard') }}">Home</a></li>
-            <li class="breadcrumb-item active">All users</li>
+            <li class="breadcrumb-item active">Managers</li>
+            <a href="{{ Route('add-manager') }}" class="btn btn-primary w-min-sm m-b-0-25 waves-effect waves-light pull-right">Add manager</a>
         </ol>
     </div>
 
     <div class="container-fluid">
         <div class="box box-block bg-white">
             <div class="table-responsive">
-                <a href="{{ Route('add-user') }}" class="btn btn-primary w-min-sm m-b-0-25 waves-effect waves-light pull-right">Add user</a>
+                
                 <table class="table table-bordered table-striped">
                     <thead class="thead-inverse">
                         <tr>
@@ -33,23 +34,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if( $users->Count() > 0 )
-                        @foreach( $users as $user)
+                        @if( $managers->Count() > 0 )
+                        @foreach( $managers as $manager)
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->first_name . ' ' . $user->last_name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone }}</td>
-                            <td>{{ $user->role }}</td>
+                            <td>{{ $manager->id }}</td>
+                            <td>{{ $manager->first_name . ' ' . $manager->last_name }}</td>
+                            <td>{{ $manager->email }}</td>
+                            <td>{{ $manager->phone }}</td>
+                            <td>{{ $manager->role }}</td>
                             <td>
-                                <a href="{{ Route('edit-user', $user->id) }}" class="btn btn-success w-min-sm m-b-0-25 waves-effect waves-light">Edit</a>
-                                <button data-title="this user" data-route="{{ Route('delete-user', $user->id) }}" class="btn btn-danger w-min-sm m-b-0-25 waves-effect waves-light run-swal" data-type="cancel">Delete</button>
+                                <a href="{{ Route('edit-manager', $manager->id) }}" class="btn btn-success w-min-sm m-b-0-25 waves-effect waves-light">Edit</a>
+                                <button data-title="this manager" data-route="{{ Route('delete-manager', $manager->id) }}" class="btn btn-danger w-min-sm m-b-0-25 waves-effect waves-light run-swal" data-type="cancel">Delete</button>
                             </td>
                         </tr>
                         @endforeach
                         @else
                         <tr>
-                            <td colspan="9"><div class="alert alert-warning">No users available.</div></td>
+                            <td colspan="9"><div class="alert alert-warning">No managers available.</div></td>
                         </tr>
                         @endif
                     </tbody>

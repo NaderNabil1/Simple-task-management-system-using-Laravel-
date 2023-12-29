@@ -19,6 +19,9 @@ return new class extends Migration
             $table->foreignId('manager')->nullable();
             $table->foreignId('user')->nullable();
             $table->string('status')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->string('slug');
             $table->timestamps();
 
             $table->foreign('manager')->references('id')->on('users')->nullOnDelete();

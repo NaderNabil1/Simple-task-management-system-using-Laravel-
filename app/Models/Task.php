@@ -17,6 +17,9 @@ class Task extends Model
         'manager',
         'user',
         'file',
+        'start_date',
+        'end_date',
+        'slug',
         'status',
     ];
 

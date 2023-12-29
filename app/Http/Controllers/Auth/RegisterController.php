@@ -8,11 +8,6 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Auth\Events\Registered;
-use Mail;
-use Illuminate\Http\Request;
-use App\Mail\RegisterMail;
-
 
 class RegisterController extends Controller
 {
@@ -52,6 +47,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -71,21 +67,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user =  User::create([
+        return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
-            'role' => 'Client',
-            'status' => 'Active',
+            'role' => 'Manager',
         ]);
-        $details =  [
-            'first_name' => $user->first_name,
-            'last_name' => $user->last_name,
-            'email' => $user->email,
-         ];
-        Mail::to($user->email)->send(new RegisterMail($details));
-        return $user ;
     }
 }

@@ -1,4 +1,4 @@
-@extends('BackEnd.app')
+@extends('Dashboard.app')
 
 @section('title', 'Edit user')
 
@@ -31,26 +31,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-xs-12">
+                    <div class="col-md-6 col-xs-12">
                         <div class="form-group">
                             <label for="">Email</label>
                             <input name="email" type="email" class="form-control" placeholder="Enter email"  value="{{ $user->email }}">
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-12">
+                    <div class="col-md-6 col-xs-12">
                         <div class="form-group">
                             <label for="">Phone</label>
                             <input name="phone" type="tel" class="form-control" placeholder="Enter phone"  value="{{ $user->phone }}">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <div class="form-group">
-                            <label for="">Role</label>
-                            <select class="form-control" name="role" id="">
-                                <option value="">Please select user role</option>
-                                <option {{ $user->role == 'Admin' ? 'selected' : '' }} value="Admin">Admin</option>
-                                <option {{ $user->role == 'Client' ? 'selected' : '' }} value="Client">Client</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -59,17 +49,6 @@
                         <div class="form-group">
                             <label for="">Password</label><br>
                             <a href="{{ Route('password.request') }}" class="btn btn-danger w-min-sm m-b-0-25 waves-effect waves-light">Reset password</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-xs-12">
-                        <div class="form-group">
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" name="status" class="custom-control-input" {{ $user->status == 'Active' ? 'checked' : '' }}>
-                                <span class="custom-control-indicator"></span>
-                                <span class="custom-control-description">Active</span>
-                            </label>
                         </div>
                     </div>
                 </div>

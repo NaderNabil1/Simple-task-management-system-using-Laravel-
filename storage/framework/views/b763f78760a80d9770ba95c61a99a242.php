@@ -1,7 +1,5 @@
-@extends('Dashboard.app')
-
-@section('title', 'Dashboard')
-@section('content')
+<?php $__env->startSection('title', 'Dashboard'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content-area p-y-1">
     <div class="container-fluid">
         <div class="row row-md">
@@ -44,6 +42,8 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
 
+
+<?php echo $__env->make('Dashboard.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Nader\SoftXpert\resources\views/Dashboard/Dashboard/index.blade.php ENDPATH**/ ?>
