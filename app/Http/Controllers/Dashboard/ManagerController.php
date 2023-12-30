@@ -47,7 +47,6 @@ class ManagerController extends Controller
                 'first_name' => ['required', 'string'],
                 'last_name' => ['required', 'string'],
                 'phone' => ['required'],
-                'role' => ['required'],
             ]);
             $manager->update([
                 'first_name' => $request->first_name,

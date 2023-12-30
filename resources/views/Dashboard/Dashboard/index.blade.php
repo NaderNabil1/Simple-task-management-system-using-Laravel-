@@ -28,7 +28,7 @@
                     <div class="t-icon right"><i class="ti-package"></i></div>
                     <div class="t-content">
                         <h1 class="m-b-1">{{$unfinished_tasks}}</h1>
-                        <h6 class="text-uppercase">In Progress Tasks</h6>
+                        <h6 class="text-uppercase">Pending Tasks</h6>
                     </div>
                 </div>
             </div>

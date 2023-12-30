@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="icon" type="image/png" href="{{ asset('BackEnd/img/favicon.png') }}">
 
         <!-- Title -->
         <title>@yield('title') - Soft Xpert</title>
@@ -41,7 +40,7 @@
             <div class="site-sidebar-overlay"></div>
             <div class="site-sidebar">
                 <a class="logo" href="{{ Route('home') }}">
-                    <img src="{{ asset('BackEnd/img/logo.png') }}" alt="Logo" style="width:100%" />
+                    <img src="{{ asset('FrontEnd/img/logo2.png') }}" alt="Logo" style="width:100%" />
                 </a>
                 <div class="custom-scroll custom-scroll-light">
                     <ul class="sidebar-menu">

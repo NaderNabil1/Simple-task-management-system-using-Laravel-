@@ -23,7 +23,7 @@ class TaskController extends Controller
         $users = User::where('role', 'User')->get();
         $managers = User::where('role', 'Manager')->get();
         if($request->isMethod('post')){
-            if( $request->status == 'on' ){ $status = 'Completed'; } else { $status = 'In Progress'; }
+            if( $request->status == 'on' ){ $status = 'Completed'; } else { $status = 'Pending'; }
             $slug = Str::slug($request->title, '-');
             $file = $request->file;
             if( $file != NULL ){
@@ -56,9 +56,9 @@ class TaskController extends Controller
     public function edit(request $request, $id){
         $task = Task::find($id);
         $managers = User::where('role', 'Manager')->get();
-        $users = User::where('role', 'User')->get();
+        $users = User::where('role','User')->get();
         if($request->isMethod('post')){
-            if( $request->status == 'on' ){ $status = 'Completed'; } else { $status = 'In Progress'; }
+            if( $request->status == 'on' ){ $status = 'Completed'; } else { $status = 'Pending'; }
             $slug = Str::slug($request->title, '-');
             $file = $request->file;
             if( $file != NULL ){
@@ -85,7 +85,7 @@ class TaskController extends Controller
         return view('Dashboard.Task.edit', compact('task', 'managers', 'users'));
     }
     public function delete($id){
-        $task = Product::find($id);
+        $task = Task::find($id);
         if($task != NULL){
             $task->delete();
         }

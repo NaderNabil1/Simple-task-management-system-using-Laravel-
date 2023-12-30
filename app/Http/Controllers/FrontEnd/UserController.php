@@ -12,9 +12,7 @@ class UserController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        $allOrders = Order::where('user', Auth::User()->id)->count();
-        $pendingOrders = Order::where('user', Auth::User()->id)->where('status', '!=', 'Completed')->orWhere('status', '!=', 'Canceled')->count();
-        return view('FrontEnd.Account.myAccount', compact('user', 'allOrders', 'pendingOrders'));
+        return view('FrontEnd.Account.myAccount', compact('user'));
     }
 
     public function edit(request $request){

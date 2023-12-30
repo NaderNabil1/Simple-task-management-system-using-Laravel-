@@ -32,7 +32,7 @@
 
                             <ul class="nav-menu nav-menu-social align-to-right">
                                 <?php if(Auth::User() && Auth::User()->role == 'Manager' ): ?>
-                                <li><a href="<?php echo e(route('dashboard')); ?>" target="_blank">Admin Area</a></li>
+                                <li><a href="<?php echo e(route('dashboard')); ?>" target="_blank">Managers Dashboard</a></li>
                                 <?php endif; ?>
                                 <?php if(Auth::user()): ?>
                                 <li><a href="<?php echo e(Route('edit-account')); ?>">Edit account</a></li>

@@ -50,7 +50,7 @@
                                 <select name="user" class="form-control">
                                     <option value="">Please select User</option>
                                     @foreach ($users as $user)
-                                    <option {{ $task->user ==  $user->id ? 'selected' : ''}} value="{{ $user->id }}">{{ $task->User->first_name . ' ' . $task->User->last_name }}</option>
+                                    <option {{ $task->user == $user->id ? 'selected' : '' }} value="{{ $user->id }}">{{ $user->first_name . ' ' . $user->last_name}}</option>
                                     @endforeach
                                 </select>
                             </div>

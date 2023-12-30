@@ -16,7 +16,7 @@ class DashboardController extends Controller
     
     }
     public function index(){
-        $unfinished_tasks = Task::where('status','In Progress')->count();
+        $unfinished_tasks = Task::where('status','Pending')->count();
         $finished_tasks = Task::where('status','Completed')->count();
         $users = User::where('role','User')->count();
         $managers = User::where('role','Manager')->count();

@@ -32,7 +32,7 @@
 
                             <ul class="nav-menu nav-menu-social align-to-right">
                                 @if(Auth::User() && Auth::User()->role == 'Manager' )
-                                <li><a href="{{ route('dashboard') }}" target="_blank">Admin Area</a></li>
+                                <li><a href="{{ route('dashboard') }}" target="_blank">Managers Dashboard</a></li>
                                 @endif
                                 @if(Auth::user())
                                 <li><a href="{{ Route('edit-account') }}">Edit account</a></li>

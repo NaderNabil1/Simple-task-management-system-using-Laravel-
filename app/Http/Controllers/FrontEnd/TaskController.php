@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class TaskController extends Controller
 {
     public function index(){
-        $tasks = Task::where('User', Auth::id())->orderBy('status', 'desc')->get();
+        $tasks = Task::where('user', Auth::id())->orderBy('status', 'desc')->get();
         $tasks = $tasks->sortBy(function ($item) {
             return $item->status == 'In Progress' ? 0 : 1;
         });

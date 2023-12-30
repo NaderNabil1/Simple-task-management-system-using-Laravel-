@@ -58,7 +58,6 @@ Route::prefix('/')->group(function(){
     });
 
     // Account routes
-//    Route::any('/my-account', [App\Http\Controllers\FrontEnd\UserController::class, 'index'])->name('my-account');
     Route::any('/edit-account', [App\Http\Controllers\FrontEnd\UserController::class, 'edit'])->name('edit-account');
     Route::any('/reset-password', [App\Http\Controllers\FrontEnd\UserController::class, 'reset_password'])->name('reset-password');
     Route::any('/change-password', [App\Http\Controllers\FrontEnd\UserController::class, 'change_password'])->name('change-password');

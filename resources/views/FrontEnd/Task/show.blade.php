@@ -52,7 +52,7 @@
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select class="form-control" name="status">
-                                        <option {{ $task->status == "In Progress" ? 'selected' : '' }} value="In Progress">In Progress</option>
+                                        <option {{ $task->status == "Pending" ? 'selected' : '' }} value="Pending">Pending</option>
                                         <option {{ $task->status == "Completed" ? 'selected' : '' }} value="Completed">Completed</option>
                                     </select>
                                 </div>

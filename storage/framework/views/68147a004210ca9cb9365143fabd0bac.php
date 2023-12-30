@@ -49,7 +49,7 @@
                                 <select name="user" class="form-control">
                                     <option value="">Please select User</option>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option <?php echo e($task->user ==  $user->id ? 'selected' : ''); ?> value="<?php echo e($user->id); ?>"><?php echo e($task->User->first_name . ' ' . $task->User->last_name); ?></option>
+                                    <option <?php echo e($task->user == $user->id ? 'selected' : ''); ?> value="<?php echo e($user->id); ?>"><?php echo e($user->first_name . ' ' . $user->last_name); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                             </div>
